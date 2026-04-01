@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>点击10次查看照片</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{height:100vh;display:flex;justify-content:center;align-items:center;flex-direction:column;background:#f7f8fa;font-family:system-ui}
+#btn{padding:20px 45px;font-size:22px;background:#4263eb;color:white;border:none;border-radius:12px;cursor:pointer}
+#btn:hover{background:#3151ce}
+.text{font-size:24px;margin-bottom:30px}
+#imgBox{display:none;text-align:center}
+#finalImg{max-width:90%;max-height:80vh;border-radius:8px;box-shadow:0 0 30px rgba(0,0,0,.2)}
+</style>
+</head>
+<body>
+<div class="text" id="tip">第1次点击</div>
+<button id="btn">点我</button>
+<div id="imgBox">
+<img id="finalImg" src="C:\Users\86158\Desktop\8f962588dc381c3f7845335f80bc4415.jpg">
+</div>
+
+<script>
+const btn = document.getElementById('btn')
+const tip = document.getElementById('tip')
+const imgBox = document.getElementById('imgBox')
+let count = 1
+
+btn.onclick = function(){
+  count++
+  if(count <= 10){
+    tip.innerText = `第${count}次点击`
+  }else{
+    btn.style.display = 'none'
+    tip.style.display = 'none'
+    imgBox.style.display = 'block'
+  }
+}
+</script>
+</body>
+</html>
